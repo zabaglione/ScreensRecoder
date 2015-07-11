@@ -83,7 +83,7 @@ public class ScreensRecoder : MonoBehaviour
 
         if (endframeno > 0 && frameno >= endframeno)
         {
-            Application.Quit();
+            isRecoding = false;
         }
 	}
 }
