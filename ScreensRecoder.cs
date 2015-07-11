@@ -11,8 +11,8 @@ public class ScreensRecoder : MonoBehaviour
 	public string directory = "D:\\captures\\";
     public string baseFilename;
     public int framerate = 60;
-    public bool isRecoding = false;
-    public int endframeno = 0;
+    public bool isRecording = false;
+    public int endFrameno = 0;
 
     private int frameno = -1;
 
@@ -33,7 +33,7 @@ public class ScreensRecoder : MonoBehaviour
 	{
         checkRecodingKey();
 
-        if (isRecoding == true)
+        if (isRecording == true)
         {
             TakeScreenShot();
         }
@@ -61,7 +61,7 @@ public class ScreensRecoder : MonoBehaviour
             {
                 if (Input.GetKeyDown(keyCode))
                 {
-                    isRecoding = !isRecoding;
+                    isRecording = !isRecording;
                 }
             }
         }
@@ -81,9 +81,9 @@ public class ScreensRecoder : MonoBehaviour
 		Debug.Log(string.Format("screen shot : path = {0}, scale = {1} (screen = {2}, {3})",
 			path, scale, Screen.width, Screen.height), this);
 
-        if (endframeno > 0 && frameno >= endframeno)
+        if (endFrameno > 0 && frameno >= endFrameno)
         {
-            isRecoding = false;
+            isRecording = false;
         }
 	}
 }
